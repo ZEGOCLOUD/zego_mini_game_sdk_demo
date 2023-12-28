@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qRc-Xp-Ae5">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vJY-Z6-Pqj">
+            <objects>
+                <navigationController id="qRc-Xp-Ae5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdm-Hy-7FX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Em5-19-Xeq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s2A-bp-Tq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-950" y="-16"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZegoMiniGameSdkDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-aD-Pjd">
+                                <rect key="frame" x="144.66666666666666" y="408.66666666666669" width="104" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start Ludo"/>
+                                <connections>
+                                    <segue destination="OvK-br-ATQ" kind="push" id="Yel-BL-UmN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BPc-aD-Pjd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1FX-Tb-I5o"/>
+                            <constraint firstItem="BPc-aD-Pjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="poG-Lt-LuL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c7O-D8-e3H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="-16"/>
+        </scene>
+        <!--Ludo Game View Controller-->
+        <scene sceneID="Uis-ZF-gU1">
+            <objects>
+                <viewController id="OvK-br-ATQ" customClass="LudoGameViewController" customModule="ZegoMiniGameSdkDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T1A-G8-Eim" customClass="Ludo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ4-2y-Tks">
+                                <rect key="frame" x="301.66666666666669" y="688" width="51.333333333333314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DAG-LS-EqY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Mic"/>
+                                <connections>
+                                    <action selector="pressMicButton:" destination="Bq5-n7-5jo" eventType="touchUpInside" id="8gY-jm-eCg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pv2-aV-vNQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OZ4-2y-Tks" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pv2-aV-vNQ" secondAttribute="leading" symbolic="YES" id="0ut-fv-pu7"/>
+                            <constraint firstItem="Pv2-aV-vNQ" firstAttribute="trailing" secondItem="OZ4-2y-Tks" secondAttribute="trailing" constant="40" id="hW2-46-luo"/>
+                            <constraint firstItem="OZ4-2y-Tks" firstAttribute="bottom" secondItem="Pv2-aV-vNQ" secondAttribute="bottom" constant="-80" id="o6i-cO-viI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dEe-Ie-961"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgd-Xy-v7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Bq5-n7-5jo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="910.68702290076328" y="-16.197183098591552"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

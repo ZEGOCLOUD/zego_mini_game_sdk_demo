@@ -23,6 +23,7 @@ import im.zego.minigameengine.IZegoCommonCallback;
 import im.zego.minigameengine.IZegoGameEngineHandler;
 import im.zego.minigameengine.ZegoGameComponent;
 import im.zego.minigameengine.ZegoGameEngineError;
+import im.zego.minigameengine.ZegoGameInfo;
 import im.zego.minigameengine.ZegoGameLanguage;
 import im.zego.minigameengine.ZegoGameLoadState;
 import im.zego.minigameengine.ZegoGameMode;
@@ -93,11 +94,7 @@ public class LudoGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mic.setSelected(!mic.isSelected());
-                if (mic.isSelected()) {
-                    ZegoExpressEngine.getEngine().muteMicrophone(mic.isSelected());
-                } else {
-                    ZegoExpressEngine.getEngine().muteMicrophone(mic.isSelected());
-                }
+                ZegoExpressEngine.getEngine().muteMicrophone(mic.isSelected());
             }
         });
     }
@@ -171,7 +168,7 @@ public class LudoGameActivity extends AppCompatActivity {
         // player
         List<String> selectUserIDList = new ArrayList<>();
         selectUserIDList.add("111");
-        selectUserIDList.add("222");
+//        selectUserIDList.add("222");
         List<ZegoUserSeatInfo> userList = new ArrayList<>();
         int seatIndex = 0;
         for (String user: selectUserIDList) {
@@ -242,10 +239,12 @@ public class LudoGameActivity extends AppCompatActivity {
 
             @Override
             public void onGameStateUpdate(ZegoGameState gameState) {
+                Log.d("Tag", "onGameStateUpdate:" + gameState);
             }
 
             @Override
             public void onPlayerStateUpdate(ZegoGamePlayerState playerState) {
+                Log.d("Tag", "onPlayerStateUpdate:" + playerState);
             }
 
             @Override
@@ -274,6 +273,7 @@ public class LudoGameActivity extends AppCompatActivity {
 
             @Override
             public void onGameResult(String result) {
+                Log.d("Tag", "onGameResult:" + result);
             }
 
             @Override

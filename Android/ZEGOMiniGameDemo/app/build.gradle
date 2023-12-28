@@ -45,5 +45,4 @@ dependencies {
     implementation "im.zego:minigameengine:1.2.0"
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'im.zego:express-audio:3.11.0'
-
 }
